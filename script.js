@@ -1,4 +1,3 @@
-//your JS code here. If required.
 function createPromise(min, max) {
   var delay = Math.floor(Math.random() * (max - min + 1) + min);
   return new Promise(function(resolve) {
@@ -41,4 +40,11 @@ Promise.all(promises)
     
     totalCell.innerHTML = 'Total';
     totalRow.insertCell().innerHTML = totalTime.toFixed(3);
+    
+    // Append table rows to the table element
+    table.appendChild(loadingRow.parentNode);
+    table.appendChild(totalRow);
+    for (var i = 0; i < results.length; i++) {
+      table.appendChild(table.rows[2 + i]);
+    }
   });
